@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="main">
+        <form class="home-form" action="/create" method="post">
+            <label for="heading">Heading</label>
+            <input type="text" name="heading" placeholder="Title">
+            <label for="details">Discription</label>
+            <input type="text" name="details" placeholder="Details" >
+            <button type="submit" >SUBMIT</button>
+        </form>
+    </div>
+    
+    <%- include("partials/footer.ejs") %>
+
+
+    <%- include("partials/header.ejs") %>
+
+    <div class="content-view">
+        <% if(count > 0){  %>
+            <%  for(let i=0;i<count;i++){ %>
+                <div class="content">
+                    <h2> <%= blogs[i].head %> </h2>
+                    <p><%= blogs[i].body %></p>
+                    <form class="ebtn" action="/edit/<%=blogs[i].id%>" method="get">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form class="dbtn" action="/delete/<%=blogs[i].id%>" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+                <%  } %>
+            <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

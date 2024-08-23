@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="editmain">
+        <form class="editform" action="/upload/<%= blog.id %>" method="post">
+            <label for="title">Heading</label>
+            <input class="editinput" type="text" name="title" value="<%= blog.head %>">
+            <label for="discription">Discription</label>
+            <input class="editinput" type="text" name="discription" value="<%= blog.body %>">
+            <button type="submit" >SUBMIT</button>
+        </form>
+    </div>
+
+<%- include("partials/footer.ejs") %>
